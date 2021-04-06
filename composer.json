@@ -39,7 +39,7 @@
         "Ali3bdalla\\XAccounting\\XAccountingServiceProvider"
       ],
       "aliases": {
-        "XAccountingTransaction": "XAccountingEntry"
+        "XAccountingEntriy": "Ali3bdalla\\XAccounting\\XAccountingEntry"
       }
 
     }
