@@ -1,10 +1,11 @@
 # x-accounting
-Laravel Accounting Package
 
+Laravel Accounting Package
 
 ## installation
 
-add this to you composer.json file 
+add this to you composer.json file
+
 ```
    ...
    "repositories": [
@@ -20,10 +21,13 @@ add this to you composer.json file
 ```
 
 ## usage
-### prepare your accounting model 
+
+### prepare your accounting model
+
 your accounting model should use `Ali3bdalla\XAccounting\Traits\HasXAccountingTransactions` trait
 
 #### 1- App\Models\Invoice
+
 ```
    <?php
    namespace App\Models\Invoice;
@@ -37,6 +41,7 @@ your accounting model should use `Ali3bdalla\XAccounting\Traits\HasXAccountingTr
 ```
 
 #### 2- App\Models\Tax
+
 ```
    <?php
    namespace App\Models\Invoice;
@@ -49,11 +54,27 @@ your accounting model should use `Ali3bdalla\XAccounting\Traits\HasXAccountingTr
    }
 ```
 
+### create new accounting entry
 
-
-
-### create new entry using Facade 
-```
+using helper function `create_x_accounting_entry`
 
 ```
+create_x_accounting_entry([
+        [
+            "type" => 'credit',
+            "amount" => 550.53,
+            'account' => Tax::find(1)
+        ],
+        [
+            "type" => 'debit',
+            "amount" => 550.53,
+            'account' => Invoice::find(5)
+        ]
+    ])
+```
 
+### get account transactions
+
+``` 
+  get_x_accounting_account_transactions(Invoice::find(5))
+```
