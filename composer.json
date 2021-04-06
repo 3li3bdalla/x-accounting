@@ -1,0 +1,48 @@
+{
+  "name": "ali3bdalla/x-accounting",
+  "description": "Laravel Accounting Package",
+  "type": "library",
+  "require": {
+    "php" : "^7.3|^8.0",
+    "illuminate/support": "^8.0",
+    "illuminate/database": "^8.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "ali abdalla",
+      "email": "ali.dev.sd@gmail.com"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^9.3.3"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ali3bdalla\\XAccounting\\Test\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ali3bdalla\\XAccounting\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Ali3bdalla\\XAccounting\\XAccountingServiceProvider"
+      ],
+      "aliases": {
+        "XAccountingTransaction": "XAccountingEntry"
+      }
+
+    }
+  },
+  "minimum-stability": "dev"
+}
